@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -14,6 +14,24 @@
         {% endblock %}
     </head>
     <body>
+        <section class="header">
+            <div>Categories</div>
+            <ul class="menu">
+                <li>
+                    <a href ="{{ path('articles_list_by_category', {'categoryId': 1}) }}">Health prevention</a>
+                    <a href ="{{ path('articles_list_by_category', {'categoryId': 2}) }}">Hospital News</a>
+                    <a href ="{{ path('articles_list_by_category', {'categoryId': 3}) }}">COVID 19</a>
+                </li>
+            </ul>
+            <div>Authors</div>
+            <ul class="menu">
+                <li>
+                    <a href ="{{ path('articles_list_by_author', {'authorId': 1}) }}">Gregory House</a>
+                    <a href ="{{ path('articles_list_by_author', {'authorId': 2}) }}">Lisa Caddy</a>
+                    <a href ="{{ path('articles_list_by_author', {'authorId': 3}) }}">Christofer Michael Taub</a>
+                </li>
+            </ul>
+        </section>
         {% block body %}{% endblock %}
     </body>
 </html>
