@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article - {% endblock %}
+
+{% block body %}
+    <h3>
+        <a href ="{{ path('articles_get_article', {'categoryId': article.category_id, 'articleId': article.id}) }}">{{ article.title }}</a>
+    </h3>
+    <h5>{{ article.date }} </h5>
+    <h4>Author: {{ author.name }}, position: {{ author.position }}</h4>
+    <p>{{ article.text }}</p>
+{% endblock %}
